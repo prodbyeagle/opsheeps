@@ -18,11 +18,11 @@ import net.minecraft.util.math.random.Random;
 
 import java.util.List;
 
-public record MineralExtractorEnchantmentEffect(EnchantmentLevelBasedValue chance) implements EnchantmentEntityEffect {
-	public static final MapCodec<MineralExtractorEnchantmentEffect> CODEC = RecordCodecBuilder.mapCodec(instance ->
+public record MineralExtractorEffect(EnchantmentLevelBasedValue chance) implements EnchantmentEntityEffect {
+	public static final MapCodec<MineralExtractorEffect> CODEC = RecordCodecBuilder.mapCodec(instance ->
 			instance.group(
-					EnchantmentLevelBasedValue.CODEC.fieldOf("chance").forGetter(MineralExtractorEnchantmentEffect::chance)
-			).apply(instance, MineralExtractorEnchantmentEffect::new)
+					EnchantmentLevelBasedValue.CODEC.fieldOf("chance").forGetter(MineralExtractorEffect::chance)
+			).apply(instance, MineralExtractorEffect::new)
 	);
 
 	private static final List<ItemStack> MINERAL_DROPS = List.of(
